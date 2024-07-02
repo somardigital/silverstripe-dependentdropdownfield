@@ -4,11 +4,11 @@ namespace Sheadawson\DependentDropdown\Forms;
 
 use SilverStripe\Admin\LeftAndMain;
 use SilverStripe\Control\Controller;
-use SilverStripe\Forms\DropdownField;
 use SilverStripe\Control\HTTPResponse;
+use SilverStripe\Forms\DropdownField;
+use SilverStripe\Forms\FormField;
 use SilverStripe\ORM\Map;
 use SilverStripe\View\Requirements;
-use SilverStripe\Forms\FormField;
 
 /**
  * Class DependentDropdownField
@@ -171,7 +171,7 @@ class DependentDropdownField extends DropdownField
     public function Field($properties = [])
     {
         if (!is_subclass_of(Controller::curr(), LeftAndMain::class)) {
-            Requirements::javascript('silverstripe/admin:thirdparty/jquery-entwine/dist/jquery.entwine-dist.js');
+            Requirements::javascript('silverstripe/admin:thirdparty/jquery-entwine/jquery.entwine.js');
         }
 
         Requirements::javascript(
